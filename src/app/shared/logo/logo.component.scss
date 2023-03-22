@@ -1,0 +1,27 @@
+.wrap {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #d0d5dd 100%), #ffffff;
+  border: 0.225px solid #d0d5dd;
+  border-radius: 9px;
+
+  .circle {
+    width: calc(100% / 2);
+    padding-top: calc(100% / 2);
+    background: linear-gradient(26.57deg, #53389e 8.33%, #6941c6 91.67%);
+    border-radius: 50%;
+    box-shadow: 0px 1.125px 3.375px rgba(16, 24, 40, 0.1),
+      0px 1.125px 2.25px rgba(16, 24, 40, 0.06);
+  }
+
+  .blur-overlay {
+    width: 100%;
+    height: calc(100% / 2);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2.8125px);
+    position: absolute;
+    top: 50%;
+  }
+}

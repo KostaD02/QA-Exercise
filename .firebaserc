@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "qa-test-6e586": {
+      "hosting": {
+        "qa-test": [
+          "qa-test-6e586"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "qa-test-6e586"
+  }
+}

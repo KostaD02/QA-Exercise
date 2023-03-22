@@ -1,0 +1,72 @@
+<section class="wrapper">
+  <aside class="left flex-center">
+    <article>
+      <aside class="top">
+        <img src="../../../assets/svgs/star.svg" alt="star icon">
+      </aside>
+      <aside class="middle">
+        <h3>Start turning your ideas into reality</h3>
+        <p>Create a free account and get full access to all features for 30-days. No credit card needed. Trusted by over 4,000 professionals.</p>
+      </aside>
+      <aside class="bottom">
+        <article class="review">
+          <aside class="review-left">
+            <img *ngFor="let image of imagesArray;let i=index" [ngStyle]="{'left': getLeftPosition(i)}" [src]="image" alt="person placeholder">
+          </aside>
+          <aside class="review-right">
+            <aside class="star-top">
+              <div>
+                <img *ngFor="let star of starsArray" src="../../../assets/svgs/star1.svg" alt="star icon">
+              </div>
+              <div>
+                <span>{{starsArray.length}}.0</span>
+              </div>
+            </aside>
+            <aside class="star-bottom">
+              <p>from {{reviewsCount}}+ reviews</p>
+            </aside>
+          </aside>
+        </article>
+      </aside>
+    </article>
+  </aside>
+  <aside class="right flex-center">
+    <section class="register">
+      <div class="icon">
+        <app-logo></app-logo>
+      </div>
+      <div class="text">
+        <h4>Sign up</h4>
+        <p>Start your 30-day free trial.</p>
+      </div>
+      <form>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input type="text" matInput [formControl]="nameFormControl" placeholder="Enter your name">
+          <mat-error *ngIf="nameFormControl.hasError('required')"> Name is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Enter your email">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')"> Email is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput [formControl]="passwordFormControl" placeholder="Create a password">
+          <mat-hint>Must be at least 8 characters</mat-hint>
+          <mat-error *ngIf="passwordFormControl.hasError('required')"> Password is <strong>required</strong></mat-error>
+        </mat-form-field>
+      </form>
+      <div class="buttons">
+        <button [disabled]="!isValid" (click)="onSubmit()" mat-raised-button color="primary">Create account</button>
+        <button class="flex-center" mat-raised-button (click)="googleSignIn()"><img src="../../../assets/svgs/google.svg" alt="google icon"> Sign up with Google</button>
+      </div>
+      <div class="already-registered">
+        <p>Already have an account? <a routerLink="/sign-in"> Log in</a></p>
+      </div>
+    </section>
+  </aside>
+</section>

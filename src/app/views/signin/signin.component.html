@@ -1,0 +1,38 @@
+<section class="wrapper">
+  <aside class="left flex-center">
+    <article class="login">
+      <div class="text">
+        <h4>Welcome back</h4>
+        <p>Welcome back! Please enter your details.</p>
+      </div>
+      <form>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="text" [(ngModel)]="email" name="email" matInput placeholder="Enter your email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" [(ngModel)]="password" name="password" matInput placeholder="********" required>
+        </mat-form-field>
+        <div class="additional">
+          <aside class="remember flex-center">
+            <mat-checkbox color="primary">Remember for 30 days</mat-checkbox>
+          </aside>
+          <aside class="forgot flex-center">
+            <a routerLink="/forgot-password">Forgot password</a>
+          </aside>
+        </div>
+        <div class="buttons">
+          <button (click)="onSubmit()" mat-raised-button color="primary">Create account</button>
+          <button class="flex-center" mat-raised-button (click)="googleSignIn()"><img src="../../../assets/svgs/google.svg" alt="google icon"> Sign up with Google</button>
+        </div>
+        <div class="already-registered">
+          <p>Don't have an account? <a routerLink="/sign-up"> Sign up</a></p>
+        </div>
+      </form>
+    </article>
+  </aside>
+  <aside class="right flex-center" id="logo">
+    <app-logo></app-logo>
+  </aside>
+</section>

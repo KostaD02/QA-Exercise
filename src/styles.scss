@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-font: 'Inter', sans-serif;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --violet-color: #7F56DA;
+  --violet-color-light: #8056dab7;
+  --gray-color: #676869;
+  --whitesmoke-color: #C3C3C4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  font-family: var(--primary-font);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

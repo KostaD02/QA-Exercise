@@ -1,0 +1,13 @@
+<section class="wrapper">
+  <section class="current-user">
+    <div *ngIf="(user | async) as user">
+      <h2>User Profile</h2>
+      <p *ngIf="user.displayName">Full name: {{ user.displayName }}</p>
+      <p *ngIf="user.email">Email: {{ user.email }}</p>
+      <img *ngIf="user.photoURL" [src]="user.photoURL" alt="{{user.email}} photo">
+    </div>
+  </section>
+  <section class="buttons">
+    <button (click)="logOut()" mat-raised-button>Log out</button>
+  </section>
+</section>

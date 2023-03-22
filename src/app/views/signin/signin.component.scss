@@ -1,0 +1,149 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+
+  aside {
+    width: 100%;
+    height: 100%;
+  }
+
+  aside.left {
+    .login {
+      width: 440px;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 36px;
+
+      .text {
+        h4 {
+          margin: 0px;
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 39px;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          color: var(--gray-color);
+        }
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 25px;
+
+        .additional {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .remember {
+            font-weight: 600;
+          }
+
+          a {
+            color: var(--violet-color);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+
+        button:nth-child(1) {
+          background-color: var(--violet-color);
+        }
+
+        button:nth-child(1):disabled:hover {
+          cursor: not-allowed;
+        }
+
+        button:nth-child(1):disabled {
+          background-color: var(--violet-color-light);
+        }
+
+        button {
+          font-size: 18px;
+          color: var(--white-color);
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        button:nth-child(2) {
+          padding: 5px;
+          color: var(--black-color);
+        }
+      }
+
+      .already-registered {
+        text-align: center;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--gray-color);
+
+        a {
+          color: var(--violet-color);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  aside.right {
+    width: 100%;
+    height: 100%;
+
+    app-logo {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  h3 {
+    font-size: 60px !important;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+
+    aside.left {
+      article {
+        max-width: 100% !important;
+      }
+    }
+
+    aside {
+      box-sizing: border-box;
+      padding: 25px;
+
+      .register {
+        width: calc(60% - 50px) !important;
+      }
+    }
+
+    aside.right {
+      display: none;
+    }
+  }
+}
